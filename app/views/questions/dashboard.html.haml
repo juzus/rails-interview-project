@@ -1,0 +1,30 @@
+%h1.mt-5.pb-4 Q&A Dashboard
+.card-group.mb-5
+  .card{:style => "width: 18rem;"}
+    .card-body
+      %h4.card-title Questions
+      %p.card-text.card-count.badge.badge-primary= @questions.count
+
+  .card{:style => "width: 18rem;"}
+    .card-body
+      %h4.card-title Answers
+      %p.card-text.card-count.badge.badge-primary= @answers.count
+
+  .card{:style => "width: 18rem;"}
+    .card-body
+      %h4.card-title Users
+      %p.card-text.card-count.badge.badge-primary= @users.count
+
+%h3.pb-2 Tenants
+%table.table.table-striped
+  %thead
+    %tr
+      %th{:scope => "col"} #
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Request Count
+  %tbody
+    - @tenants.each_with_index do |tenant, index|
+      %tr
+        %th{:scope => "row"}= index + 1
+        %td= tenant.name
+        %td= tenant.request_count

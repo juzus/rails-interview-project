@@ -10,12 +10,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap";
 
 body {
   font: 13px/1.4 Helvetica, arial, sans-serif;
   color: #333;
   background-color: #fff;
+}
+
+/*.media {
+  margin-bottom: ;
+}
+*/
+.answer {
+  border-color: #9cd5da !important;
+}
+
+.card-count {
+  font-size: 20px;
 }

@@ -1,0 +1,38 @@
+%h1.pb-4 Questions and Answers
+
+/ - @questions.each do |question|
+/   .media.bg-light.mb-4.pt-3.pb-3
+/     %img.mr-3
+/     .media-body
+/       %h5.mt-0= question.title
+/       = "Submitted by: #{question.asker.name}"
+/       .media.bg.mr-3.ml-4.mt-3.pt-3.pr-2
+/         .media-body
+/           %h5.mt-2= "Answers:"
+/       - question.answers.each do |answer|
+/         .media.bg.mr-3.ml-4.mt-3.pt-2.pb-2.pr-2.pl-2.border.rounded.answer
+/           .media-body
+/             %h6.mt-0= answer.body
+/             = "Submitted by: #{answer.answerer.name}"
+
+/ %table
+/   %thead
+/     %tr
+/       %th Title
+/       %th Asker
+/       %th Answers
+/       %th{ :colspan => 3 }
+
+/   %tbody
+/     - @questions.each do |question|
+/       %tr
+/         %td= question.title
+/         %td= question.asker.name
+        / %td= question.answers.each do | answer |
+        /   %t
+        / <td><%= link_to "Edit", edit_book_path(book) %></td>
+        / <td><%= link_to "Destroy", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+
+/ <br>
+
+/ <%= link_to "New book", new_book_path %>
