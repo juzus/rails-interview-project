@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-class Question < ActiveRecord::Base
-
+class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
-  belongs_to :asker, class_name: 'User', foreign_key: 'user_id'
+  # rubocop:disable Metrics/LineLength
+  belongs_to :asker, inverse_of: :questions, class_name: 'User', foreign_key: 'user_id'
+  # rubocop:enable Metrics/LineLength
 
   validates :title, presence: true
 

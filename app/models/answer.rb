@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-class Answer < ActiveRecord::Base
-
+class Answer < ApplicationRecord
   belongs_to :question
-  belongs_to :answerer, class_name: 'User', foreign_key: 'user_id'
+
+  # rubocop:disable Metrics/LineLength
+  belongs_to :answerer, inverse_of: :answers, class_name: 'User', foreign_key: 'user_id'
+  # rubocop:enable Metrics/LineLength
 
   validates :body, presence: true
 

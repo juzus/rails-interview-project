@@ -26,17 +26,17 @@ class QuestionsController < ApplicationController
 
   private
 
-  # Verifies that the requester is registered as a tenant in the database
-  # using the api_key passed in the request path
-  #
-  # Raises Tenant::AuthorizationError if the api_key isn't found
-  # Otherwise, increments tenant request count
-  #
-  def verify_tenant
-    tenant = Tenant.find_by(api_key: params[:api_key])
+    # Verifies that the requester is registered as a tenant in the database
+    # using the api_key passed in the request path
+    #
+    # Raises Tenant::AuthorizationError if the api_key isn't found
+    # Otherwise, increments tenant request count
+    #
+    def verify_tenant
+      tenant = Tenant.find_by(api_key: params[:api_key])
 
-    raise TenantAuthorizationError if tenant.blank?
+      raise TenantAuthorizationError if tenant.blank?
 
-    tenant.increment_request_count
-  end
+      tenant.increment_request_count
+    end
 end

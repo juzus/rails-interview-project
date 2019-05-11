@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -31,12 +33,14 @@ gem 'sdoc', '~> 1.0.0', group: :doc
 
 group :development, :test do
   gem 'factory_bot_rails', '~> 5.0.2'
-  gem 'haml' , '~> 5.0.4'
+  gem 'haml', '~> 5.0.4'
   gem 'haml-rails', '~> 2.0.0'
   gem 'listen', '~> 3.1.5'
   gem 'rails-controller-testing', '~> 1.0.4'
   gem 'rspec-rails', '~> 3.8.0'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rubocop', '~> 0.68.1'
+  # Call 'byebug' anywhere in the code to stop execution
+  # and get a debugger console
   gem 'pry-byebug'
   gem 'shoulda-matchers', '~> 4.0.1'
 end
@@ -45,9 +49,10 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
-gem 'markdown-rails'
 gem 'ffaker'
+gem 'markdown-rails'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,7 +18,7 @@ module RailsInterviewProject
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.autoload_paths += %W(#{config.root}/errors)
+    config.autoload_paths += %W[#{config.root}/errors]
 
     Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
   end

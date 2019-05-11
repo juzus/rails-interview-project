@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-class User < ActiveRecord::Base
-
+class User < ApplicationRecord
   has_many :questions, inverse_of: :asker, dependent: :destroy
   has_many :answers,   inverse_of: :answerer, dependent: :destroy
 
