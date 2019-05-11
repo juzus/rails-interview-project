@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -13,11 +11,10 @@ gem 'uglifier', '~> 4.1.20'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'bootsnap', require: false
-
+# Use bootstrap for styles/scripts
+gem 'bootstrap', '~> 4.3.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.3.3'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 5.2.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.8.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -33,11 +30,15 @@ gem 'sdoc', '~> 1.0.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'factory_bot', '~> 5.0.2'
+  gem 'factory_bot_rails', '~> 5.0.2'
+  gem 'haml' , '~> 5.0.4'
+  gem 'haml-rails', '~> 2.0.0'
   gem 'listen', '~> 3.1.5'
+  gem 'rails-controller-testing', '~> 1.0.4'
   gem 'rspec-rails', '~> 3.8.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  gem 'shoulda-matchers', '~> 4.0.1'
 end
 
 group :development do
